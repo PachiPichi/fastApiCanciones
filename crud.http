@@ -1,0 +1,8 @@
+### Obtener todas las canciones
+GET http://127.0.0.1:3000/canciones
+
+### Obtener canción por id (existente)
+GET http://127.0.0.1:3000/canciones/1
+
+### Obtener canción por id (no existente)
+GET http://127.0.0.1:3000/canciones/999

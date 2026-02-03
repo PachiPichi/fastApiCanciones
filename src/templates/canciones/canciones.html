@@ -1,0 +1,32 @@
+{% extends "fragments/base.html" %}
+
+{% block title %}Canciones{% endblock %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>TÍTULO</th>
+        <th>ARTISTA</th>
+        <th>FECHA LANZAMIENTO</th>
+    </tr>
+    {% for cancion in canciones %}
+    <tr>
+        <td>{{ cancion.id }}</td>
+        <td>{{ cancion.titulo }}</td>
+        <td>{{ cancion.artista }}</td>
+        <td>{{ cancion.fecha_lanzamiento }}</td>
+        <td><a href="/canciones/{{cancion.id}}">Ver detalles</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<p><a href="/canciones/new">Crear canción</a></p>
+
+{% endblock %}
+
+{% block footer %}
+Autor: Patrick Firczyk
+{% endblock %}

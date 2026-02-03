@@ -1,0 +1,18 @@
+{% extends "fragments/base.html" %}
+{% block title %}Página index{% endblock %}
+
+{% block content %}
+
+    <h1>Web de Canciones</h1>
+
+    <p><a href="{{ url_for('static', path='static.html') }}">Contenido estático</a></p>
+
+    <p><a href="{{ url_for('ver_canciones') }}">Ver lista canciones</a></p>
+
+    <p><a href="/canciones/new">Crear canción</a></p>
+
+{% endblock %}
+
+{% block footer %}
+FOOTER desde Index
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "fragments/base.html" %}
+
+{% block content %}
+
+<div class="form-container">
+    <h1> 🎶 Nueva Canción</h1>
+    <form action="/canciones/new" enctype="application/x-www-form-urlencoded" method="post"></form>
+        <div class="form-group">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce el nombre" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="artista">Artista: </label>
+            <input type="text" name="artista" id="artista" placeholder="Introduce el artista" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="fecha_lanzamiento">Fecha de lanzamiento: </label>
+            <input type="text" name="fecha_lanzamiento" id="fecha_lanzamiento" placeholder="Introduce la fecha de lanzamiento" required>
+        </div>
+        <br>
+        <button type="submit">Guardar Canción</button>
+    </form>
+    <br>
+    <br>
+    <a href="/canciones" class="back-link">Volver a la lista de canciones</a>
+</div>
+{% endblock %}

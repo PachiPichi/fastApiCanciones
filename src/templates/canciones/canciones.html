@@ -3,30 +3,60 @@
 {% block title %}Canciones{% endblock %}
 
 {% block content %}
+<div class="container py-5">
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>TÍTULO</th>
-        <th>ARTISTA</th>
-        <th>FECHA LANZAMIENTO</th>
-    </tr>
-    {% for cancion in canciones %}
-    <tr>
-        <td>{{ cancion.id }}</td>
-        <td>{{ cancion.titulo }}</td>
-        <td>{{ cancion.artista }}</td>
-        <td>{{ cancion.fecha_lanzamiento }}</td>
-        <td><a href="/canciones/{{cancion.id}}">Ver detalles</a></td>
-    </tr>
-    {% endfor %}
-</table>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold">
+            <i class="bi bi-music-note-list"></i>
+            Lista de Canciones
+        </h1>
 
-<br>
-<p><a href="/canciones/new">Crear canción</a></p>
+        <a href="/canciones/new" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i>
+            Nueva canción
+        </a>
+    </div>
 
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Artista</th>
+                        <th>Fecha lanzamiento</th>
+                        <th class="text-center">Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for cancion in canciones %}
+                    <tr>
+                        <td>{{ cancion.id }}</td>
+                        <td>{{ cancion.titulo }}</td>
+                        <td>{{ cancion.artista }}</td>
+                        <td>{{ cancion.fecha_lanzamiento }}</td>
+                        <td class="text-center">
+                            <a href="/canciones/{{ cancion.id }}"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-eye"></i>
+                                Ver
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
 {% endblock %}
 
 {% block footer %}
-Autor: Patrick Firczyk
+<div class="text-center py-3 text-muted">
+    <small>Autor: Patrick Firczyk</small>
+</div>
 {% endblock %}

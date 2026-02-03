@@ -1,29 +1,78 @@
 {% extends "fragments/base.html" %}
 
 {% block content %}
+<div class="container py-5">
 
-<div class="form-container">
-    <h1> 🎶 Nueva Canción</h1>
-    <form action="/canciones/new" enctype="application/x-www-form-urlencoded" method="post"></form>
-        <div class="form-group">
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" id="nombre" placeholder="Introduce el nombre" required>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h1 class="card-title text-center mb-4">
+                        <i class="bi bi-music-note"></i>
+                        Nueva Canción
+                    </h1>
+
+                    <form action="/canciones/new"
+                          enctype="application/x-www-form-urlencoded"
+                          method="post">
+
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">
+                                <i class="bi bi-type"></i> Título
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   name="titulo"
+                                   id="titulo"
+                                   placeholder="Introduce el título"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="artista" class="form-label">
+                                <i class="bi bi-person"></i> Artista
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   name="artista"
+                                   id="artista"
+                                   placeholder="Introduce el artista"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fecha_lanzamiento" class="form-label">
+                                <i class="bi bi-calendar-event"></i> Fecha de lanzamiento
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   name="fecha_lanzamiento"
+                                   id="fecha_lanzamiento"
+                                   placeholder="YYYY-MM-DD"
+                                   required>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save"></i>
+                                Guardar canción
+                            </button>
+
+                            <a href="/canciones" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i>
+                                Volver a la lista
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
         </div>
-        <br>
-        <div class="form-group">
-            <label for="artista">Artista: </label>
-            <input type="text" name="artista" id="artista" placeholder="Introduce el artista" required>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="fecha_lanzamiento">Fecha de lanzamiento: </label>
-            <input type="text" name="fecha_lanzamiento" id="fecha_lanzamiento" placeholder="Introduce la fecha de lanzamiento" required>
-        </div>
-        <br>
-        <button type="submit">Guardar Canción</button>
-    </form>
-    <br>
-    <br>
-    <a href="/canciones" class="back-link">Volver a la lista de canciones</a>
+    </div>
+
 </div>
 {% endblock %}

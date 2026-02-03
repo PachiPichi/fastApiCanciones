@@ -3,17 +3,54 @@
 {% block title %}Canción{% endblock %}
 
 {% block content %}
-<h2> Detalle de la canción {{ cancion.id }}</h2>
-<ul>
+<div class="container py-5">
 
-    <li> Título: {{ cancion.titulo }}</li>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
-    <li> Artista: {{ cancion.artista }}</li>
+            <div class="card shadow-sm">
+                <div class="card-body">
 
-    <li> Fecha de lanzamiento: {{ cancion.fecha_lanzamiento }}</li>
-</ul>
+                    <h2 class="card-title text-center mb-4">
+                        <i class="bi bi-disc"></i>
+                        Detalle de la canción #{{ cancion.id }}
+                    </h2>
+
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">
+                            <i class="bi bi-type"></i>
+                            <strong>Título:</strong> {{ cancion.titulo }}
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-person"></i>
+                            <strong>Artista:</strong> {{ cancion.artista }}
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-calendar-event"></i>
+                            <strong>Fecha de lanzamiento:</strong> {{ cancion.fecha_lanzamiento }}
+                        </li>
+                    </ul>
+
+                    <div class="d-grid gap-2">
+                        <a href="/canciones" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i>
+                            Volver a la lista
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 {% endblock %}
 
 {% block footer %}
-Autor: Patrick Firczyk
+<div class="text-center py-3 text-muted">
+    <small>Autor: Patrick Firczyk</small>
+</div>
 {% endblock %}

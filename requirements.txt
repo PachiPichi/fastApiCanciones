@@ -5,3 +5,4 @@ pymysql
 cryptography
 jinja2
 python-multipart
+dotenv

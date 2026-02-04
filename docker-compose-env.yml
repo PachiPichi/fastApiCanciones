@@ -15,10 +15,10 @@ services:
     image: mysql 
     container_name: fastapi-db-canciones
     environment:  
-      MYSQL_ROOT_PASSWORD: quevedo
-      MYSQL_DATABASE: cancionesdb
-      MYSQL_USER: quevedo
-      MYSQL_PASSWORD: 1234
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:  
       - "3306:3306"  
   

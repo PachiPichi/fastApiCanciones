@@ -5,10 +5,10 @@ services:
     image: postgres:latest
     container_name: db-postgres   
     environment:  
-      POSTGRES_ROOT_PASSWORD: quevedo
-      POSTGRES_DB: cancionesdb
-      POSTGRES_USER: quevedo
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_ROOT_PASSWORD: ${POSTGRES_ROOT_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:  
       - "5432:5432"
 

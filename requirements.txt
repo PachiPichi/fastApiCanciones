@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 sqlmodel
-pymysql
+psycopg2-binary
 cryptography
 jinja2
 python-multipart

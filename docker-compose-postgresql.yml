@@ -1,0 +1,14 @@
+name: fastapi-postgresql
+
+services:   
+  db-postgresql:  
+    image: postgres:latest
+    container_name: db-postgres   
+    environment:  
+      POSTGRES_ROOT_PASSWORD: quevedo
+      POSTGRES_DB: cancionesdb
+      POSTGRES_USER: quevedo
+      POSTGRES_PASSWORD: 1234
+    ports:  
+      - "5432:5432"
+

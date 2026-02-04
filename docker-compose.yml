@@ -12,13 +12,13 @@ services:
     depends_on:  
       - fastapi-db  
   fastapi-db:  
-    image: mysql 
+    image: postgres:latest
     container_name: fastapi-db-canciones
     environment:  
-      MYSQL_ROOT_PASSWORD: quevedo
-      MYSQL_DATABASE: cancionesdb
-      MYSQL_USER: quevedo
-      MYSQL_PASSWORD: 1234
+      POSTGRES_ROOT_PASSWORD: quevedo
+      POSTGRES_DB: cancionesdb
+      POSTGRES_USER: quevedo
+      POSTGRES_PASSWORD: 1234
     ports:  
-      - "3306:3306"  
+      - "5432:5432"  
   

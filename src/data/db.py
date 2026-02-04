@@ -4,6 +4,7 @@ import time
 
 from sqlmodel import create_engine, SQLModel, Session
 from sqlalchemy.exc import OperationalError
+from sqlalchemy import text
 
 from models.cancion import Cancion
 
@@ -46,7 +47,7 @@ def init_db(retries: int = 10, delay: int = 3, drop_tables: bool = False):
 
             # Insertar datos iniciales si no existen
             with Session(engine) as session:
-                if not session.exec("SELECT 1 FROM cancion LIMIT 1").first():
+                if not session.exec(text("SELECT 1 FROM cancion LIMIT 1")).first():
                     session.add(Cancion(id=1, titulo="Rivers in the desert", artista="Lyn", fecha_lanzamiento="2017-01-17"))
                     session.add(Cancion(id=2, titulo="Last surprise", artista="Lyn", fecha_lanzamiento="2017-01-17"))
                     session.add(Cancion(id=3, titulo="Bajan", artista="Pescado Rabioso", fecha_lanzamiento="1973-05-07"))
